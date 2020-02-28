@@ -1,0 +1,1135 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    /* user-select: none; */
+  }
+  
+  html{
+    font-size: 10px;
+  }
+  
+  body{
+    background-color:#D4F0FC;
+  }
+  
+  .bot-down:hover{
+    transform: scale(1.04);
+    -webkit-transform: scale(1.04);
+  }
+  
+  /* ESTILOS SCROLL INICIO */
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    /* box-shadow: inset 0 0 5px grey; */
+    border-radius: 10px;
+    background-color: #D4F0FC;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #01303F;
+    border-right: 1.1px solid #D4F0FC;
+  }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(1,48,63,0.9);
+    transition: 2s;
+  }
+  
+  /* ESTILOS SCROLL FIN */
+  
+  
+  /*ESTILOS DEL HERO INICIO*/
+  .header{
+    height: 95vh;
+    background-image: url(../img/home.jpg);
+    background-size: cover;
+    background-position: top;
+    /**clip-path: polygon(0 0, 100% 0, 100% 95%, 0 83%);*/
+    position: relative;
+  }
+  
+  .back-black{
+    height: 95vh;
+    background-color: rgba(0,0,0,0.45);
+  }
+  .logo-box{
+    position: absolute;
+    top: 4rem;
+    left: 5rem;
+  }
+  
+  .logo{
+    height: 120px;
+    animation: moveInLeft 0.6s ease-in;
+  }
+  
+  .text-box{
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .heading-primary{
+   color: #fff;
+   text-transform: uppercase;
+   font-family: 'Share Tech', sans-serif;
+   margin-bottom: 2rem;
+   font-weight: lighter;
+   font-size: 50px;
+  }
+  
+  @keyframes moveInLeft {
+    0% {
+      opacity: 0;
+      transform: translate(-10rem);
+    }
+  
+    80%{
+      transform: translate(1rem);
+    }
+  
+    100%{
+      opacity: 1;
+      transform: translate(0px);
+    }
+  }
+  
+  
+        /* ANIMACION PARA EL sticky navbar */
+   @keyframes moveInRight {
+    0% {
+      opacity: 0;
+      transform: translate(10rem);
+    }
+  
+    80%{
+      transform: translate(-1rem);
+    }
+  
+    100%{
+      opacity: 1;
+      transform: translate(0px);
+    }
+  }
+  
+  @keyframes moveInBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(3rem);
+    }
+  
+    100%{
+      opacity: 1;
+      transform: translate(0px);
+    }
+  }
+  
+  /* ESTILOS DEL STICKY NAVBAR INICIO */
+  
+  
+  
+  .navigation__checkbox {
+    display: none; }
+  
+  .navigation__button {
+    background-color: #fff;
+    animation: moveInRight 0.6s ease-in;
+    height: 70px;
+    width: 70px;
+    position: fixed;
+    top: 7rem;
+    right: 10rem;
+    border-radius: 50%;
+    z-index: 2000;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+    text-align: center;
+    cursor: pointer; }
+  
+  .navigation__background {
+  animation: moveInRight 0.6s ease-in;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: fixed;
+    top: 9rem;
+    right: 11rem;
+    background-color: #01303F;
+    z-index: 1000;
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1); }
+  
+  .navigation__nav {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+    opacity: 0;
+    width: 0;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .navigation__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    /* display: none; */
+  }
+  
+  .navigation__item {
+    margin: 1rem;
+  }
+  
+  .circ{
+    font-size: 80px;
+  }
+  .navigation__link:link, .navigation__link:visited {
+    display: inline-block;
+    font-size: 25px;
+    font-weight: 300;
+    padding: 3px;
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+  
+    background-size: 220%;
+    transition: all .4s;
+  }
+    .navigation__link:link span, .navigation__link:visited span {
+      margin-right: 1.5rem;
+      display: inline-block; }
+  
+  .navigation__link:hover, .navigation__link:active {
+    background-position: 100%;
+    color: #02577A;
+     }
+  
+  .navigation__checkbox:checked ~ .navigation__background {
+    transform: scale(80); }
+  
+  .navigation__checkbox:checked ~ .navigation__nav {
+    opacity: 1;
+    width: 100%; }
+  
+  .navigation__icon {
+  
+    position: relative;
+    margin-top: 35px; }
+    .navigation__icon, .navigation__icon::before, .navigation__icon::after {
+      width: 33px;
+      height: 3px;
+      background-color: #333;
+      display: inline-block; }
+    .navigation__icon::before, .navigation__icon::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all .2s; }
+    .navigation__icon::before {
+      top: -.8rem; }
+    .navigation__icon::after {
+      top: .8rem; }
+  
+  .navigation__button:hover .navigation__icon::before {
+    top: -0.7rem; }
+  
+  .navigation__button:hover .navigation__icon::after {
+    top: 0.7rem; }
+  
+  .navigation__checkbox:checked + .navigation__button .navigation__icon {
+    background-color: transparent; }
+  
+  .navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+    top: 0;
+    transform: rotate(135deg); }
+  
+  .navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+    top: 0;
+    transform: rotate(-135deg); }
+  
+  
+  /* ESTILOS DEL STICKY NAVBAR FIN */
+  
+  .bot{
+    background-color: #fff;
+    color: #02A9F7;
+    width: 300px;
+    height: 70px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+  }
+  
+  .bot:link,
+  .bot:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 23px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all 0.2s;
+    position: relative;
+  }
+  
+  .bot:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+  
+  .bot:active{
+    transform: translate(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+  
+  .bot::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: -1;
+    transition: all .4s;
+  }
+  
+  .bot::after{
+    background-color: #fff;
+  }
+  
+  .bot:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
+  
+  .bot-animated{
+    animation: moveInBottom .6s ease-out .25s;
+    animation-fill-mode: backwards;
+  }
+  
+  /*ESTILOS DEL HERO FIN*/
+  
+  /* ESTILOS DE Â¿FLISOL? */
+  
+  h1{
+    font-family: 'Share Tech', sans-serif;
+    color: #01303F;
+    font-size: 50px;
+    font-weight: lighter;
+    margin-top: 70px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  .que-es-flisol {
+    display: block;
+    /* padding: 0px 100px; */
+  }
+  .que-es-flisol h1, p{
+    text-align: center;
+  }
+  
+  .que-es-flisol p{
+    color: #02577A;
+    font-size: 21px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    line-height: 1.5;
+  }
+  
+  
+  /* ESTILOS DE Â¿FLISOL? */
+  
+  /* ESTILOS DE LAS MAIN-CARDS INICIO */
+  .card-cont{
+    /* background-color: yellow; */
+  
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+  
+  .card-main-content{
+    width: 400px;
+    height: 500px;
+    display: flex;
+    margin: 30px 20px;
+    box-shadow: 7px 7px 6px rgba(0,0,0,0.25);
+    border-radius: 15px;
+  }
+  
+  .card-main-content:hover{
+    cursor: pointer;
+        transform: scale(1.04);
+        -webkit-transform: scale(1.04);
+        transition: .3s;
+      }
+  .back-card{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.73);
+    width: 400px;
+    height: 500px;
+    border-radius: 15px;
+  }
+  
+  .main-card-section{
+    color: #fff;
+    width: 400px;
+    padding: 5px 20px;
+    position: absolute;
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    margin: 0px;
+    /* line-height: 1.5; */
+  }
+  .img-main-card{
+    position: absolute;
+    height: 500px;
+    width: 400px;
+    border-radius: 15px;
+  }
+  .main-card-section span{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px!important;
+    text-align: center!important;
+  }
+  .main-card-section h2{
+    font-family: 'Share Tech', sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 30px;
+    text-transform: uppercase;
+  }
+  .main-card-section p{
+    text-align:left;
+    margin-top: 15px;
+    font-size: 15px;
+  }
+  /* ESTILOS DE LAS MAIN-CARDS FIN */
+  
+  /* BOT DOWN INICIO */
+  
+  a{
+    text-decoration: none;
+  }
+  .bot-down {
+    background-color: green;
+    color: #fff;
+    font-family: 'Lato';
+    font-weight: bold;
+    padding: 25px 0px;
+    text-transform: uppercase;
+    width: 350px;
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 17px;
+    border-radius: 10px;
+  }
+  
+  .bot-down:hover{
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    transition: .2s;
+  }
+  
+  /* BOT DOWN FIN */
+  
+  /* ESTILOS BANDAS DE TEGISTRO INICIO */
+  
+  .band-register {
+    background-color: #01303F;
+    height: 100px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+  }
+  .band-register a{
+    text-decoration: none;
+  
+  }
+  .band-register a div {
+    margin-right: 3rem;
+    padding: 20px 5px;
+    text-align: center;
+    border-radius: 100px;
+    width: 200px;
+    background-color:#fff;
+    color: #02A9F7;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .band-register a div:hover{
+    background-color: #02A9F7;
+  
+    color: #fff;
+    transition: .3s;
+  }
+  
+  
+  /* ESTILOS BANDAS DE TEGISTRO FIN */
+  
+  /*ESTILOS DE ACORDEON INICIO */
+  .wraperr{
+    width: 100%;
+    background-color: blue;
+    height: auto;
+    margin-bottom: 100px;
+  }
+  
+  .half {
+    float: left;
+    width: 100%;
+    padding: 3em 1em;
+    /* background-color: red; */
+  
+  }
+  /* Acordeon styles */
+  .tab {
+    position: relative;
+    margin-bottom: 1px;
+    width: 65%;
+    color: #fff;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .tab input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+  .tab label {
+    position: relative;
+    display: block;
+    padding: 0 0 0 1em;
+    background: #01303F;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    line-height: 3;
+    cursor: pointer;
+  }
+  .tab-content {
+    max-height: 0;
+    overflow: hidden;
+    background: #fff;
+    color: #02577A;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 17px;
+    -webkit-transition: max-height .35s;
+    -o-transition: max-height .35s;
+    transition: max-height .35s;
+  }
+  
+  .tab-content div img{
+    height: 100px;
+    width: 120px;
+    margin-right: 15px;
+    display: block;
+    padding: 10px;
+  
+  }
+  
+  .tab-content div{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  .tab-content div ul{
+    margin-top: 20px;
+  }
+  
+  .blue .tab-content {
+    background: #3498db;
+  }
+  .tab-content p {
+    margin: 1em;
+  }
+  /* :checked */
+  .tab input:checked ~ .tab-content {
+    max-height: 100vh;
+  }
+  /* Icon */
+  .tab label::after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 3em;
+    height: 3em;
+    line-height: 3;
+    text-align: center;
+    -webkit-transition: all .35s;
+    -o-transition: all .35s;
+    transition: all .35s;
+  }
+  .tab input[type=checkbox] + label::after {
+    content: "+";
+  }
+  .tab input[type=radio] + label::after {
+    content: "\25BC";
+  }
+  .tab input[type=checkbox]:checked + label::after {
+    transform: rotate(315deg);
+  }
+  .tab input[type=radio]:checked + label::after {
+    transform: rotateX(180deg);
+  }
+  
+  
+  /*ESTILOS DE ACORDEON FIN*/
+  
+  /* ESTILOS DE ORGANIZADORES INICIO */
+  .org-tit{
+    margin-top: 310px;
+  }
+  .wrap-organizadores{
+    /* background-color: pink; */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    /* background-color: red; */
+    padding: 10px 30px;
+  }
+  .wrap-organizadores p{
+    font-size: 24px;
+    margin: 30px 25px;
+    font-family: 'Lato',sans-serif;
+    color: #01303F;
+  }
+  
+  /* ESTILOS DE ORGANIZADORES FIN */
+  
+  /*ESTILOS XONOTIC INICIO */
+  
+  .cont-xono{
+    background-color: #fff;
+    box-shadow: 7px 7px 6px rgba(0,0,0,0.25);
+    display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   align-items: center;
+   padding: 40px;
+   width: 65%;
+   margin-left: auto;
+   margin-right: auto;
+   margin-bottom: 70px;
+  }
+  .cont-xono h2{
+    font-family: 'Share Tech', sans-serif;
+    font-size: 40px;
+    color: #01303F;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: lighter;
+  }
+  .cont-xono img {
+    width: 80%;
+  }
+  .cont-text-xono {
+    display: flex;
+    justify-content: space-between;
+    /* background-color: yellow; */
+    width: 80%;
+    height: 60px;
+  }
+  .cont-xono p{
+    font-size: 18px;
+    width: 80%;
+    line-height: 1.6;
+    text-align: left;
+  
+  }
+  
+  /*ESTILOS XONOTIC FIN */
+  
+  /* ESTILOS DEL TEAM DEV INICIO */
+  
+  .wrap-developers{
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+  }
+  .dev-person{
+    margin: 0px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 220px;
+    padding: 10px;
+  }
+  .dev-person:hover{
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    transition: .3s;
+    cursor: pointer;
+  }
+  .dev-person img{
+    border-radius: 100%;
+    height: 180px;
+  }
+  
+  .placa-name{
+    background-color: #02A9F7;
+    font-size: 24px;
+    text-transform: uppercase;
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    margin-top: 150px;
+  }
+  .placa-name p{
+  margin: 0!important;
+  text-transform: uppercase;
+  font-family: 'Share Tech', sans-serif;
+  color: #fff;
+  padding-top: 10px;
+  }
+  .profs{
+    font-size: 30px;
+    font-family: 'Lato', sans-serif;
+    color: #01303F;
+    margin-top: 20px!important;
+  }
+  /* ESTILOS DEL TEAM DEV FIN */
+  
+  /* ESTILOS FOOTER INICIO */
+  
+  footer{
+    background-color: #01303F;
+    color: #fff;
+    font-size: 23px;
+    font-family: 'Lato', sans-serif;
+    height:210px;
+  
+  }
+  
+  .back-itemss {
+    display: flex;
+    /* background-color: red; */
+    justify-content: space-around;
+    padding: 10px 0px;
+  }
+  .back-itemss img{
+    margin-top: 50px;
+    height: 90px;
+    /* height: 120px; */
+  
+  }
+  .contain-follow{
+    color: #01303F;
+    background-color: #fff;
+  
+    width: 230px;
+    height: 70px;
+  
+  
+  
+  }
+  .contain-follow p{
+    font-family: 'Share Tech', sans-serif;
+    font-weight: lighter;
+    padding-top: 10px;
+    text-transform: uppercase;
+  
+  }
+  
+  .icons-bocs{
+    /* background-color: green; */
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+  }
+  .icons-bocs i{
+    font-size: 60px;
+  }
+  .icons-bocs i:hover{
+    color: #02A9F7;
+    transition: .2s;
+  }
+  
+  /* ESTILOS FOOTER FIN */
+  
+  
+  
+  
+  /* MEDIA QUERIES INICIO */
+  
+  @media only screen and (max-width: 480px) {
+  .navigation__list{
+  margin-top: 82px;
+  }
+    .logo{
+      height: 80px;
+  
+    }
+    .text-box{
+      top: 43%;
+    }
+    .logo-box{
+      left:2rem;
+    }
+  
+    .bot{
+       width: 230px;
+       font-size: 16px;
+       height: 55px;
+       font-weight: bold;
+       padding: 0px;
+    }
+    .bot:link{
+      padding: 0px;
+      padding-top: 18px;
+    }
+    .heading-primary{
+      margin-bottom: 4rem;
+      font-size: 30px;
+    }
+    .navigation__button {
+      top: 5rem!important;
+  }
+  
+    .navigation__background {
+      top: 6rem!important;
+    }
+  
+  }
+  
+  
+  @media only screen and (min-width: 481px) and (max-width: 768px){
+    .backImg{
+      width: 100%;
+    }
+    .logo{
+      height: 90px;
+  
+    }
+    .text-box{
+      top: 47%;
+    }
+    .logo-box{
+      left:3rem;
+    }
+    .heading-primary{
+      margin-bottom: 3rem;
+      font-size: 38px;
+    }
+    .bot{
+       width: 300px;
+       font-size: 21px;
+       height: 65px;
+    }
+    .bot:link{
+      padding-top:20px;
+    }
+  }
+  
+  @media only screen and (max-width: 768px){
+  
+    .backImg{
+      width: 100%;
+    }
+  
+    h1{
+      font-size: 40px;
+      margin-top: 60px;
+    }
+  
+    .que-es-flisol {
+      display: block;
+      /* padding: 0px 40px; */
+    }
+  
+    .que-es-flisol p{
+      font-size: 17px;
+      margin-top: 30px;
+      margin-bottom: 40px;
+      padding: 10px;
+    }
+  
+    .navigation__button {
+      height: 60px;
+      width: 60px;
+      top: 6rem;
+      right: 4rem;
+    }
+  
+    .navigation__background {
+      height: 40px;
+      width: 40px;
+      top: 7rem;
+      right: 5rem;
+    }
+  
+    .navigation__icon {
+      margin-top: 30px;
+     }
+  
+     .navigation__icon, .navigation__icon::before, .navigation__icon::after {
+       height: 2.5px;
+    }
+  
+    .tab{
+      width: 100%;
+  
+    }
+    .cont-xono{
+      width: 96%;
+      padding: 10px;
+    }
+    .cont-xono h2{
+      font-size: 34px;
+      padding-top: 20px;
+    }
+  
+    .foo-cid{
+      font-size: 20px;
+    }
+  
+  }
+  @media only screen and (min-width: 769px) and (max-width: 920px){
+    .logo{
+      height: 120px;
+    }
+    .logo-box{
+      left:3rem;
+    }
+    .heading-primary-main{
+      font-size: 58px;
+    }
+  
+    .heading-primary-sub{
+      font-size: 48px;
+    }
+    .heading-primary{
+      margin-bottom: 5rem;
+    }
+    .bot{
+       width: 300px;
+       font-size: 22px;
+       height: 65px;
+    }
+    .bot:link{
+      padding-top:20px;
+    }
+  
+      h1{
+        font-size: 40px;
+      }
+  
+      .que-es-flisol {
+        /* padding: 0px 70px; */
+      }
+  
+      .que-es-flisol p{
+        font-size: 22px;
+      }
+  
+      .navigation__button {
+        top: 7rem;
+        right: 3rem;
+    }
+  
+      .navigation__background {
+        height: 40px;
+        width: 40px;
+        top: 7rem;
+        right: 5rem;
+      }
+  
+  
+  
+  }
+  
+  /* MEDIA QUERIES PARA EL REGISTER */
+  
+  
+  @media only screen and (max-width: 434px){
+    .card-cont{
+      margin-top: 30px;
+    }
+  
+  
+    .card-main-content{
+      width: 98%;
+      height: 430px;
+      margin: 30px 0px;
+      box-shadow: none;
+    }
+  
+  
+    .back-card{
+      width: 95%;
+      height: 430px;
+    }
+  
+    .main-card-section{
+      width: 95%;
+      padding: 5px 20px;
+      margin: 0px;
+      /* line-height: 1.5; */
+    }
+    .img-main-card{
+      height: 430px;
+      width: 95%;
+      border-radius: 15px;
+    }
+    .bot-down{
+      padding: 13px;
+      width: 70%;
+    }
+  .ac{
+    height: 500px!important;
+  }
+  }
+  
+  @media only screen and (max-width: 456px){
+    .back-itemss img{
+      display: none;
+    }
+    .encab{
+      font-size: 34px;
+  
+    }
+    .cont-xono h2{
+      font-size: 30px;
+    }
+  }
+  
+  @media only screen and (max-width: 425px){
+    .cont-xono{
+      padding: 0px;
+    }
+    .cont-xono img{
+      width: 100%;
+    }
+    .cont-text-xono, .cont-xono p{
+      width: 95%;
+    }
+    .card-cont{
+      margin-top: 10px;
+    }
+  }
+  
+  @media only screen and (max-width: 405px){
+  
+    .ug h2{
+       font-size: 17px!important;
+    }
+    .og h2{
+      font-size: 22px;
+    }
+    .ugly-card p{
+      font-size: 13px;
+    }
+    .placa-name{
+      margin-top:5px;
+    }
+  }
+  @media only screen and (max-width: 480px){
+    .backImg{
+      width: 100%;
+    }
+  /*1 body{
+    width: 136%;
+  } */
+  .cont-xono{
+    box-shadow: none;
+  }
+  
+  }
+  
+  @media only screen and (min-width: 1029px) and (max-width: 1234px){
+    .backImg{
+      width: 53%;
+    }
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1029px){
+    .backImg{
+      width: 68%;
+    }
+  
+  }
+  
+  @media only screen and (max-width: 376px){
+    .navigation__button{
+      width: 50px;
+      height: 50px;
+    }
+    .navigation__background{
+      top: 0.3rem;
+      right: 4.5rem;
+    }
+    .navigation__icon  {
+      margin-top: 25px;
+    }
+  
+  }
+  @media only screen and (max-width: 483px){
+    .logo{
+      height: 80px;
+  
+    }
+    .navigation__list{
+      margin-top: 5px;
+    }
+    .navigation__link:link, .navigation__link:visited{
+      font-size: 20px;
+    }
+  
+  }
+  
+  @media only screen and (max-width: 880px){
+    .tab-content{
+      font-size: 15px;
+  
+    }
+    .tab-content div img{
+      padding-right: 25px;
+      }
+  }
+  
+  @media only screen and (min-width: 769px) and (max-width: 1230px){
+    .tab, .cont-xono{
+      width: 90%;
+  
+    }
+  
+  }
+  /* MEDIA QUERIES FIN */
